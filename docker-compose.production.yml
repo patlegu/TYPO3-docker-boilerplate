@@ -129,7 +129,7 @@ services:
   #######################################
   #ftp:
   #  build:
-  #    context: docker/vsftp/
+  #    context: docker/vsftpd/
   #  restart: always
   #  volumes:
   #    - ./:/application/
