@@ -2,7 +2,7 @@
 # Storage Docker container
 #++++++++++++++++++++++++++++++++++++++
 
-FROM busybox
+FROM alpine:latest
 
 RUN mkdir /storage \
     && chmod 1777 /storage
