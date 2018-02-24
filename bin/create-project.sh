@@ -25,6 +25,7 @@ case "$1" in
     "typo3")
         execInDir "$CODE_DIR" "docker run --rm --env COMPOSER_CACHE_DIR=/tmp --user $(id -u):$(id -g) -v \$(pwd):/app composer:latest create-project typo3/cms-base-distribution /app"
         execInDir "$CODE_DIR" "touch web/FIRST_INSTALL"
+        chown -R 1000:www-data "$CODE_DIR" && find "$CODE_DIR" -type d -exec chmod 0755 {} \; && find "$CODE_DIR" -type f -exec chmod 0644 {} \;
         ;;
 
     ###################################
